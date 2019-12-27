@@ -9,8 +9,14 @@ defined('APP_PATH') || define('APP_PATH', BASE_PATH . '/app');
 
 return new \Phalcon\Config([
     'application' => [
-        'modelsDir'      => APP_PATH . '/models/',
         'viewsDir'       => APP_PATH . '/views/',
+        'services'       => APP_PATH . '/src/Services/',
+        'controllers'       => APP_PATH . '/src/Controllers/',
+        'entities'       => APP_PATH . '/src/Entity/',
+        'repositories'       => APP_PATH . '/src/Repositories/',
         'baseUri'        => '/',
+        'env' => getenv("SL_ENV"),
+        'instance' =>  gethostname(),
+        'version' => getenv("SL_VERSION"),
     ]
 ]);

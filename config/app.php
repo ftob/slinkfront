@@ -9,7 +9,10 @@
  * Add your routes here
  */
 $app->get('/', function () {
-    echo $this['view']->render('index');
+    /**
+     * @var $this Phalcon\Mvc\Micro
+     */
+    echo $this->view->render('index');
 });
 
 /**
@@ -17,5 +20,5 @@ $app->get('/', function () {
  */
 $app->notFound(function () use($app) {
     $app->response->setStatusCode(404, "Not Found")->sendHeaders();
-    echo $app['view']->render('404');
+    echo $app->view->render('404');
 });

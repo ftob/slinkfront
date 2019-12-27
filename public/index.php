@@ -7,7 +7,7 @@ use Phalcon\Mvc\Micro;
 error_reporting(E_ALL);
 
 define('BASE_PATH', dirname(__DIR__));
-define('APP_PATH', BASE_PATH . '/app');
+define('APP_PATH', BASE_PATH);
 
 try {
     /**
@@ -40,7 +40,7 @@ try {
     /**
      * Include Application
      */
-    include APP_PATH . '/app.php';
+    include APP_PATH . '/config/app.php';
 
     /**
      * Handle the request
